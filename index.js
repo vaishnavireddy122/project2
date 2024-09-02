@@ -133,7 +133,7 @@ function changeInfo(direction) {
 		}
 	}
 }
-
+//edited
 function updateCard(e) {
 	const card = e.currentTarget;
 	const box = card.getBoundingClientRect();
@@ -143,11 +143,11 @@ function updateCard(e) {
 	};
 	let angle = Math.atan2(e.pageX - centerPosition.x, 0) * (35 / Math.PI);
 	gsap.set(card, {
-		"--current-card-rotation-offset": ${angle}deg,
+		"--current-card-rotation-offset": `${angle}deg`,
 	});
 	const currentInfoEl = cardInfosContainerEl.querySelector(".current--info");
 	gsap.set(currentInfoEl, {
-		rotateY: ${angle}deg,
+		rotateY: `${angle}deg`,
 	});
 }
 
@@ -235,7 +235,7 @@ const waitForImages = () => {
 				gsap.to(loaderEl, {
 					duration: 1,
 					scaleX: loadProgress,
-					backgroundColor: hsl(${loadProgress * 120}, 100%, 50%,
+					backgroundColor: `hsl (${loadProgress * 120}, 100%, 50%)`,
 				});
 
 				if (totalImages == loadedImages) {
